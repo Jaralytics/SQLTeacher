@@ -1,0 +1,132 @@
+:root {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --bg: #f6f6f3;
+  --surface: #ffffff;
+  --surface-2: #f0f0ec;
+  --ink: #1d2330;
+  --muted: #5b6272;
+  --line: #e1e2e6;
+  --line-strong: #c9ccd4;
+
+  --accent: #3b4fc4;
+  --accent-soft: #e6e9fb;
+  --accent-ink: #ffffff;
+
+  --kept: #25704a;
+  --kept-soft: #e7f4ec;
+  --removed: #a1403a;
+  --removed-soft: #fbeceb;
+  --replaced: #8a5a00;
+  --replaced-soft: #fbf0d9;
+
+  --radius: 8px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 320ms;
+
+  color-scheme: light dark;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161b;
+    --surface: #1b1e25;
+    --surface-2: #232730;
+    --ink: #e6e8ee;
+    --muted: #a3a9b8;
+    --line: #2b2f39;
+    --line-strong: #3d424f;
+
+    --accent: #8f9fff;
+    --accent-soft: #272d55;
+    --accent-ink: #11142b;
+
+    --kept: #74cd9f;
+    --kept-soft: #1b2b24;
+    --removed: #e8928a;
+    --removed-soft: #2d1f1f;
+    --replaced: #e6b967;
+    --replaced-soft: #2c2619;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
